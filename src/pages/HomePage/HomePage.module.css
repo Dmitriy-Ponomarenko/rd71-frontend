@@ -69,7 +69,7 @@
 .title {
   font-size: 2rem;
   font-weight: bold;
-  background: linear-gradient(70deg, #1976d2 15%, #21CBF3 90%);
+  background: linear-gradient(var(--blue-gradient));
   background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: center;
@@ -89,7 +89,7 @@
 }
 
 .buttonLogIn {
-  background: linear-gradient(70deg, #1976d2 15%, #21CBF3 90%);
+  background: linear-gradient(var(--blue-gradient));
   color: white;
   border: none;
   padding: 10px 20px;
@@ -101,7 +101,7 @@
 
 .buttonLogIn:hover,
 .buttonLogIn:focus {
-  background: linear-gradient(70deg, #1565c0 15%, #1E88E5 90%);
+  background: linear-gradient(var(--blue-gradient-hover));
   transform: scale(1.05);
 }
 
@@ -118,7 +118,7 @@
 
 .buttonSignUp:hover,
 .buttonSignUp:focus {
-  background: linear-gradient(70deg, #1976d2 15%, #21CBF3 90%);
+  background: linear-gradient(var(--blue-gradient));
   color: white;
   transform: scale(1.05);
 }
