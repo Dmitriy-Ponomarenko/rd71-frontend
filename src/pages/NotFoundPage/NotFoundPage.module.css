@@ -1,3 +1,6 @@
+/* NotFound.module.css */
+
+/* Base styles for mobile-first approach */
 .notFoundSection {
   height: 100vh;
   display: flex;
@@ -29,7 +32,7 @@
 .title {
   font-size: 2rem;
   font-weight: bold;
-  background: linear-gradient(var(--blue-gradient));
+  background: linear-gradient(var(--blue-gradient-reverse));
   background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 16px;
@@ -47,7 +50,7 @@
 }
 
 .buttonHome {
-  background: linear-gradient(var(--blue-gradient));
+  background: linear-gradient(var(--blue-gradient-reverse));
   color: white;
   border: none;
   padding: 10px 20px;
@@ -59,7 +62,7 @@
 
 .buttonHome:hover,
 .buttonHome:focus {
-  background: linear-gradient(70deg, #1565c0 15%, #1E88E5 90%);
+  background: linear-gradient(var(--blue-gradient-hover-reverse));
   transform: scale(1.05);
 }
 
@@ -77,7 +80,7 @@
     padding: 12px 24px;
     font-size: 1.1rem;
   }
-  
+
   .notFoundContainer {
     padding: 32px;
   }

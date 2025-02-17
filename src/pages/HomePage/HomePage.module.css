@@ -125,7 +125,6 @@
 
 /* Styles for tablets and larger screens */
 @media (min-width: 768px) {
-
   .quoteBox {
     padding: 24px;
     font-size: 2rem;

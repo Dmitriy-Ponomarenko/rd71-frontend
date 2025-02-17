@@ -17,10 +17,7 @@ export const NotFoundPage: React.FC = () => {
             The page you are looking for doesn't exist.
           </p>
           <div className={styles.buttonContainer}>
-            <button
-              className={styles.buttonHome}
-              onClick={() => navigate('/')}
-            >
+            <button className={styles.buttonHome} onClick={() => navigate('/')}>
               Go to Home Page
             </button>
           </div>
