@@ -15,6 +15,14 @@
   --black: #000000;
   --white: #ffffff;
   --yellow: #ffc531;
+  --blur: rgba(255, 255, 255, 0.8);
+  --shadow-light: 8px 8px 16px rgba(0, 0, 0, 0.2),
+    -8px -8px 16px rgba(255, 255, 255, 0.7);
+  --shadow-strong: 0 20px 50px rgba(0, 0, 0, 0.6);
+  --blue-gradient: 75deg, #1976d2 15%, #21cbf3 90%;
+  --blue-gradient-reverse: 70deg, #1e88e5 15%, #1565c0 90%;
+  --blue-gradient-hover: 70deg, #1565c0 15%, #1e88e5 90%;
+  --blue-gradient-hover-reverse: 70deg, #1a73e8 15%, #0f5ba7 90%;
 }
 
 body {
@@ -24,7 +32,7 @@ body {
   color: var(--main);
   margin: 0;
   padding: 0;
-  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 h1,
@@ -90,6 +98,16 @@ input {
 
 .section {
   padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 fieldset {
@@ -111,6 +129,7 @@ fieldset {
 
 @media screen and (min-width: 1280px) {
   .section {
-    padding: 64px;
+    padding: 42px;
+    flex-direction: row;
   }
 }
