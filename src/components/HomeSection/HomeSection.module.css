@@ -1,0 +1,55 @@
+/* HomeSection.module.css */
+
+/* Base styles for mobile-first approach */
+.secondSide {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  background: linear-gradient(var(--blue-gradient));
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: gray;
+  text-align: center;
+}
+
+.buttonContainer {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+/* Styles for tablets and larger screens */
+@media screen and (min-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+    text-align: start;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+}
+
+/* Styles for desktops and larger screens */
+@media screen and (min-width: 1280px) {
+  .title {
+    font-size: 3rem;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+  }
+}
