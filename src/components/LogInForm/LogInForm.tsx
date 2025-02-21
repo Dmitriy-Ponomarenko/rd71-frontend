@@ -46,7 +46,11 @@ export const LogInForm: React.FC = () => {
   return (
     <div className={styles.infoContainer}>
       <div className={styles.formContainer}>
-        <form className={styles.form} noValidate onSubmit={handleSubmit(onSubmit)}>
+        <form
+          className={styles.form}
+          noValidate
+          onSubmit={handleSubmit(onSubmit)}
+        >
           <h1 className={styles.title}>Log-In</h1>
           <div className={styles.inputBox}>
             <div className={styles.group}>
@@ -57,7 +61,9 @@ export const LogInForm: React.FC = () => {
                 type="email"
                 id="email"
                 placeholder="Enter your email"
-                className={`${styles.input} ${errors.email ? styles.error : ''}`}
+                className={`${styles.input} ${
+                  errors.email ? styles.error : ''
+                }`}
                 {...register('email')}
                 autoComplete="email"
               />
@@ -75,7 +81,9 @@ export const LogInForm: React.FC = () => {
                   type={passwordVisible ? 'text' : 'password'}
                   id="password"
                   placeholder="Enter your password"
-                  className={`${styles.input} ${errors.password ? styles.error : ''}`}
+                  className={`${styles.input} ${
+                    errors.password ? styles.error : ''
+                  }`}
                   {...register('password')}
                   autoComplete="current-password"
                 />
@@ -101,9 +109,7 @@ export const LogInForm: React.FC = () => {
           </button>
 
           <div className={styles.signUpOffer}>
-            <p className={styles.signuUpOfferText}>
-              You neUd a new account?&nbsp;
-            </p>
+            <p className={styles.signuUpOfferText}>You need a new account?</p>
             <SignUpButton />
           </div>
         </form>
