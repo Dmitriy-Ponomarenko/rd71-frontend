@@ -23,6 +23,7 @@
   --blue-gradient-reverse: 70deg, #1e88e5 15%, #1565c0 90%;
   --blue-gradient-hover: 70deg, #1565c0 15%, #1e88e5 90%;
   --blue-gradient-hover-reverse: 70deg, #1a73e8 15%, #0f5ba7 90%;
+  --blue: #1e88e5;
 }
 
 body {
