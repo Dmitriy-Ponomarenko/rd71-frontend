@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './LoginButton.module.css';
+import styles from './LogInButton.module.css';
 import { useNavigate } from 'react-router-dom';
 
 export const LogInButton: React.FC = () => {
