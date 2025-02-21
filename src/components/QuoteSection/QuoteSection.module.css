@@ -1,0 +1,74 @@
+/* QuoteSection.module.css */
+
+/* Base styles for mobile-first approach */
+.firstSide {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../../img/QuoteSection/QuoteBackground.jpg');
+  background-size: cover;
+  background-position: center;
+  color: var(--white);
+  padding: 20px;
+  box-shadow: var(--shadow-strong);
+}
+
+.quoteBox {
+  font-family: 'Bebas Neue', serif;
+  display: flex;
+  flex-direction: column;
+  background: var(--blur);
+  color: var(--black);
+  padding: 16px;
+  border-radius: 10px;
+  text-align: center;
+  transform: scale(1.2);
+  user-select: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  width: 100%;
+  max-width: 200px;
+  box-shadow: var(--shadow-light);
+}
+
+.textBlack {
+  background: var(--black);
+  color: var(--white);
+  padding: 5px;
+}
+
+.textUnderline {
+  text-decoration: underline;
+}
+
+.textBlackLarge {
+  font-size: 3.2rem;
+  letter-spacing: 0.8px;
+  background: var(--black);
+  color: var(--white);
+}
+
+.textUnderlineLarge {
+  font-size: 4.5rem;
+  text-decoration: underline;
+}
+
+/* Styles for tablets and larger screens */
+@media (min-width: 768px) {
+  .quoteBox {
+    padding: 24px;
+    font-size: 2rem;
+    transform: scale(1.2);
+    max-width: fit-content;
+  }
+}
+
+/* Styles for desktops and larger screens */
+@media (min-width: 1280px) {
+  .quoteBox {
+    padding: 32px;
+    font-size: 2.5rem;
+    transform: scale(1.7);
+  }
+}
