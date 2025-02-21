@@ -1,0 +1,17 @@
+/* SignUpPage.module.css */
+
+/* Base styles for mobile-first approach */
+.signUpPageSection {
+  height: 100vh;
+}
+
+.signUpPageContainer {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  gap: 16px;
+}
+
+/* Styles for tablets and larger screens */
+
+/* Styles for desktops and larger screens */
