@@ -1,0 +1,20 @@
+/* LogInButtonTransparent.module.css */
+
+/* Base styles for mobile-first approach */
+.buttonLogIn {
+  background: transparent;
+  color: #1976d2;
+  border: 2px solid #1976d2;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.5s ease, color 0.5s ease, transform 0.5s ease;
+}
+
+.buttonLogIn:hover,
+.buttonLogIn:focus {
+  background: linear-gradient(var(--blue-gradient));
+  color: white;
+  transform: scale(1.05);
+}
