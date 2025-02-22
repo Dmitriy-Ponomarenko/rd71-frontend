@@ -94,14 +94,14 @@ export const LogInForm: React.FC = () => {
                 >
                   {passwordVisible ? <FaEye /> : <FaEyeSlash />}
                 </button>
-                {errors.password && (
-                  <p className={styles.error}>{errors.password.message}</p>
-                )}
               </div>
-              <NavLink to="/forgot-password" className={styles.forgotPassword}>
-                Forgot password?
-              </NavLink>
+              {errors.password && (
+                <p className={styles.error}>{errors.password.message}</p>
+              )}
             </div>
+            <NavLink to="/forgot-password" className={styles.forgotPassword}>
+              Forgot password?
+            </NavLink>
           </div>
 
           <button type="submit" className={styles.signInBtn}>

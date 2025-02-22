@@ -74,7 +74,7 @@
 }
 
 .infoContainer {
-  max-width: 343px;
+  /* max-width: 343px; */
   width: 100%;
   border-radius: 10px;
   background: var(--light-gray);
@@ -130,6 +130,7 @@
 .group {
   display: flex;
   flex-direction: column;
+  height: 100px;
 }
 
 .label {
@@ -186,7 +187,7 @@
 }
 
 .forgotPassword {
-  margin-top: 14px;
+  /* margin-top: 14px; */
   color: var(--dark-blue);
   font-size: 14px;
   font-style: normal;
@@ -344,6 +345,11 @@
   .signupOfferText {
     font-size: 18px;
     line-height: 24px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .infoContainer {
+    max-width: 343px;
   }
 }
 

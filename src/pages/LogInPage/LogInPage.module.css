@@ -16,7 +16,6 @@
 
 /* Styles for desktops and larger screens */
 @media screen and (min-width: 1280px) {
-
   .logInPageSection {
     overflow-y: hidden;
   }
