@@ -10,8 +10,8 @@
 }
 
 .title {
-  font-size: 2rem;
-  font-weight: bold;
+  /* font-size: 2rem; */
+  font-size: 1.7rem;
   background: linear-gradient(var(--blue-gradient));
   background-clip: text;
   -webkit-text-fill-color: transparent;
