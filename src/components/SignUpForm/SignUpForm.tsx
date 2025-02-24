@@ -100,10 +100,10 @@ export const SignUpForm: React.FC = () => {
                 >
                   {passwordVisible ? <FaEye /> : <FaEyeSlash />}
                 </button>
-                {errors.password && (
-                  <p className={styles.error}>{errors.password.message}</p>
-                )}
               </div>
+              {errors.password && (
+                <p className={styles.error}>{errors.password.message}</p>
+              )}
             </div>
 
             <div className={styles.group}>
@@ -124,14 +124,16 @@ export const SignUpForm: React.FC = () => {
                 <button
                   type="button"
                   className={styles.toggle}
-                  onClick={() => setConfirmPasswordVisible(!confirmPasswordVisible)}
+                  onClick={() =>
+                    setConfirmPasswordVisible(!confirmPasswordVisible)
+                  }
                 >
                   {confirmPasswordVisible ? <FaEye /> : <FaEyeSlash />}
                 </button>
-                {errors.confirmPassword && (
-                  <p className={styles.error}>{errors.confirmPassword.message}</p>
-                )}
               </div>
+              {errors.confirmPassword && (
+                <p className={styles.error}>{errors.confirmPassword.message}</p>
+              )}
             </div>
           </div>
 
@@ -140,8 +142,10 @@ export const SignUpForm: React.FC = () => {
           </button>
 
           <div className={styles.signUpOffer}>
-            <p className={styles.signUpOfferText}>Do you already have an account?</p>
-              <LogInButtonTransparent />
+            <p className={styles.signUpOfferText}>
+              Do you already have an account?
+            </p>
+            <LogInButtonTransparent />
           </div>
         </form>
       </div>

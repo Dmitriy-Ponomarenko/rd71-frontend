@@ -74,7 +74,7 @@
 }
 
 .infoContainer {
-  max-width: 343px;
+  /* max-width: 343px; */
   width: 100%;
   border-radius: 10px;
   background: var(--light-gray);
@@ -103,7 +103,7 @@
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.36px;
-  margin-bottom: 32px;
+  margin-bottom: 10px;
   opacity: 0;
   animation: fadeInRight 1s ease-out forwards;
   animation-delay: 1s;
@@ -130,6 +130,7 @@
 .group {
   display: flex;
   flex-direction: column;
+  height: 110px;
 }
 
 .label {
@@ -231,7 +232,6 @@
   outline: none;
 }
 
-
 .signUpBtn {
   display: flex;
   height: 50px;
@@ -292,18 +292,15 @@
 
 @media screen and (min-width: 768px) {
   .infoContainer {
-    min-width: 704px;
+    /* min-width: 704px; */
     padding: 32px;
   }
 
   .formContainer {
-    display: flex;
-    flex-direction: column;
     min-width: 436px;
   }
 
   .form {
-    display: flex;
     flex-direction: column;
   }
   .title {
@@ -311,6 +308,9 @@
     line-height: 1.2;
   }
 
+  .group {
+    height: 125px;
+  }
   .label {
     font-size: 16px;
     line-height: 24px;
@@ -334,7 +334,6 @@
     font-size: 18px;
     text-align: center;
   }
-
 
   .signUpBtn {
     width: 436px;
