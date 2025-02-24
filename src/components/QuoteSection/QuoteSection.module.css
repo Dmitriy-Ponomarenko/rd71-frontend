@@ -12,6 +12,7 @@
   color: var(--white);
   padding: 20px;
   box-shadow: var(--shadow-strong);
+  display: none;
 }
 
 .quoteBox {
@@ -57,6 +58,10 @@
 
 /* Styles for tablets and larger screens */
 @media (min-width: 768px) {
+  .firstSide {
+    display: flex;
+  }
+
   .quoteBox {
     padding: 24px;
     font-size: 2rem;

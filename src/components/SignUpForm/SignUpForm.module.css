@@ -75,7 +75,7 @@
 
 .infoContainer {
   /* max-width: 343px; */
-  width: 100%;
+  /* width: 100%; */
   border-radius: 10px;
   background: var(--light-gray);
   padding: 24px 16px;
@@ -89,7 +89,7 @@
   display: flex;
   flex-direction: column;
   max-width: 311px;
-  margin: 0 auto 50px;
+  margin: 0 auto;
   opacity: 0;
   animation: fadeInRight 1s ease-out forwards;
   animation-delay: 0.8s;
@@ -97,6 +97,7 @@
 
 .title {
   background: linear-gradient(var(--blue-gradient));
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 32px;
@@ -130,7 +131,7 @@
 .group {
   display: flex;
   flex-direction: column;
-  height: 110px;
+  height: 90px;
 }
 
 .label {
@@ -180,8 +181,9 @@
 
 .error {
   color: #ef5050;
-  font-size: 0.875rem;
-  margin-top: 0.1rem;
+  /* font-size: 0.875rem; */
+  font-size: 0.7rem;
+  /* margin-top: 0.1rem; */
   opacity: 0;
   animation: fadeIn 0.3s ease-out forwards;
 }
@@ -293,11 +295,15 @@
 @media screen and (min-width: 768px) {
   .infoContainer {
     /* min-width: 704px; */
-    padding: 32px;
+    display: flex;
+    align-items: center;
+    min-width: 704px;
+    /* padding: 32px; */
   }
 
   .formContainer {
     min-width: 436px;
+    margin-bottom: 50px;
   }
 
   .form {
@@ -348,20 +354,24 @@
   }
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1280px) {
   .infoContainer {
-    margin: 0;
+    /* margin: 0;
     min-height: 754px;
-    width: 672px;
+    width: 672px; */
+    padding-top: 50px;
   }
 
-  .formContainer {
+  /* .formContainer {
     align-self: stretch;
-  }
+  } */
 
   .title {
     font-size: 36px;
     line-height: 1.2;
+  }
+  .group {
+    height: 105px;
   }
 
   .label {

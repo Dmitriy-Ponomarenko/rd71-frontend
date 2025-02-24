@@ -9,7 +9,7 @@ import { HomeSection } from '../../components/HomeSection/HomeSection';
 
 export const HomePage: React.FC = () => {
   return (
-<div className={`${styles.homeSection} section`}>
+    <div className={`${styles.homeSection} section`}>
       <motion.div
         className={`${styles.homeContainer} container`}
         initial={{ opacity: 0, y: 20 }}

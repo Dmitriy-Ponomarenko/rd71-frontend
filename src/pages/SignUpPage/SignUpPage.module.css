@@ -8,10 +8,22 @@
 .signUpPageContainer {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   height: 100%;
   gap: 16px;
 }
 
 /* Styles for tablets and larger screens */
 
+@media screen and (min-width: 768px) {
+  .signUpPageContainer {
+    justify-content: flex-start;
+  }
+}
+
 /* Styles for desktops and larger screens */
+@media screen and (min-width: 1280px) {
+  .signUpPageContainer {
+    flex-direction: row;
+  }
+}
