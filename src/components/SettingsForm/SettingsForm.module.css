@@ -1,0 +1,175 @@
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.title {
+  background: linear-gradient(var(--blue-gradient));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2em;
+  font-weight: 700;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeInRight 1s ease-out forwards;
+}
+
+.subtitle {
+  font-size: 1.5em;
+  color: var(--dark-blue);
+  margin-bottom: 10px;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.item {
+  margin-bottom: 15px;
+}
+
+.item label {
+  display: block;
+  font-size: 1em;
+  color: var(--dark-gray);
+  margin-bottom: 5px;
+}
+
+.item input[type='text'],
+.item input[type='email'],
+.item input[type='password'],
+.item select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--gray);
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+.choiceButton {
+  padding: 10px 20px;
+  border: 1px solid var(--gray);
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  background-color: var(--white);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.choiceButton.active {
+  background-color: var(--primary);
+  color: var(--white);
+  border-color: var(--primary-dark);
+}
+
+.choiceButton:not(:last-child) {
+  margin-right: 10px;
+}
+
+.dangerButton {
+  background-color: #dc3545;
+  color: var(--white);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 6px 6px 12px rgba(220, 53, 69, 0.2),
+    -6px -6px 12px rgba(255, 255, 255, 0.7);
+}
+
+.dangerButton:hover {
+  background-color: #c82333;
+  box-shadow: 0 0 10px rgba(220, 53, 69, 0.7);
+}
+
+.dangerButton:active {
+  box-shadow: 4px 4px 12px rgba(220, 53, 69, 0.2),
+    -4px -4px 12px rgba(255, 255, 255, 0.7);
+}
+
+.actionButton {
+  padding: 10px 20px;
+  border: 1px solid var(--gray);
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  background-color: var(--white);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.actionButton:hover {
+  background-color: var(--primary);
+  color: var(--white);
+  border-color: var(--primary-dark);
+}
+
+.dangerZone {
+  padding: 20px;
+  border-top: 5px dashed #f5c6cb;
+  border-bottom: 5px dashed #f5c6cb;
+}
+
+.dangerSubtitle {
+  color: #721c24;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.dangerButtonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.challengeButtonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.choiceButtonContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .title {
+    font-size: 2em;
+  }
+
+  .subtitle {
+    font-size: 1.5em;
+  }
+
+  .choiceButtonContainer {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+  }
+
+  .challengeButtonContainer {
+    flex-direction: row;
+    width: auto;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .title {
+    font-size: 2em;
+  }
+
+  .subtitle {
+    font-size: 1.5em;
+  }
+}

@@ -1,0 +1,47 @@
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.settingsSection {
+  padding: 20px;
+  background-color: var(--light-gray);
+}
+
+.settingsContainer {
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: var(--shadow-light);
+  padding: 20px;
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@media screen and (min-width: 768px) {
+  .settingsContainer {
+    max-width: 600px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .settingsContainer {
+    max-width: 800px;
+  }
+}
