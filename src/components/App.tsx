@@ -7,6 +7,7 @@ import { NotFoundPage } from '../pages/NotFoundPage/NotFoundPage';
 import './App.module.css';
 import { Route, Routes } from 'react-router-dom';
 import { SettingsPage } from '../pages/SettingsPage/SettingsPage';
+import { UserPage } from '../pages/UserPage/UserPage';
 
 export const App: React.FC = () => {
   return (
@@ -15,7 +16,7 @@ export const App: React.FC = () => {
       <Route path="/login" element={<LogInPage />} />
       <Route path="/signup" element={<SignUpPage />} />
       <Route path="*" element={<NotFoundPage />} />
-      <Route path="/user/:id" element={<HomePage />} />
+      <Route path="/user/:id" element={<UserPage />} />
       <Route path="/user/settings" element={<SettingsPage />} />
     </Routes>
   );
