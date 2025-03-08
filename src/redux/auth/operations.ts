@@ -3,7 +3,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:4000/api/auth';
+
+axios.defaults.baseURL = 'https://rd71-backend.onrender.com/api/auth';
+
 
 interface AuthResponse {
   user: { id: string; email: string };
