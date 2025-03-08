@@ -4,7 +4,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch } from '../../redux/store';
-import { register as registerUser} from '../../redux/auth/operations';
+import { register as registerUser } from '../../redux/auth/operations';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import styles from './SignUpForm.module.css';
 import { LogInButtonTransparent } from '../LogInButtonTransparent/LogInButtonTransparent';
@@ -52,7 +52,7 @@ export const SignUpForm: React.FC = () => {
 
   const onSubmit = async (data: FormData) => {
     const { email, password } = data;
-    await dispatch(registerUser({ email, password}));
+    await dispatch(registerUser({ email, password }));
     reset();
   };
 
@@ -65,6 +65,9 @@ export const SignUpForm: React.FC = () => {
           onSubmit={handleSubmit(onSubmit)}
         >
           <h1 className={styles.title}>Sign-Up</h1>
+
+          {authError && <p className={styles.error}>{authError}</p>}
+
           <div className={styles.inputBox}>
             <div className={styles.group}>
               <label htmlFor="email" className={styles.label}>
@@ -144,7 +147,11 @@ export const SignUpForm: React.FC = () => {
             </div>
           </div>
 
-          <button type="submit" className={styles.signUpBtn} disabled={isLoading}>
+          <button
+            type="submit"
+            className={styles.signUpBtn}
+            disabled={isLoading}
+          >
             {isLoading ? 'Signing Up...' : 'Sign Up'}
           </button>
 
