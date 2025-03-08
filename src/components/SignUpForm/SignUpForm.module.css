@@ -1,4 +1,4 @@
-/* LogInForm.module.css */
+/* SignUpForm.module.css */
 
 @keyframes fadeInUp {
   0% {
@@ -246,7 +246,7 @@
   font-weight: 700;
   cursor: pointer;
   transition: all 0.5s;
-  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+  box-shadow: 6px 6px 12px var(--shadow-light-gray), -6px -6px 12px var(--white);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   background: linear-gradient(var(--blue-gradient));
 }
@@ -259,7 +259,7 @@
 }
 
 .signUpBtn:active {
-  box-shadow: 4px 4px 12px #c5c5c5, -4px -4px 12px #ffffff;
+  box-shadow: 4px 4px 12px var(--shadow-light-gray), -4px -4px 12px var(--white);
 }
 
 .signUpOffer {
