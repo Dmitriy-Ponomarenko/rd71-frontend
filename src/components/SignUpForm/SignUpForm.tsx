@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch } from '../../redux/store';
+import { register as registerUser } from '../../redux/auth/operations';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import styles from './SignUpForm.module.css';
 import { LogInButtonTransparent } from '../LogInButtonTransparent/LogInButtonTransparent';
+import { selectAuthError, selectIsLoading } from '../../redux/auth/selectors';
 
 const validationSchema = yup.object().shape({
   email: yup
@@ -28,6 +31,10 @@ export const SignUpForm: React.FC = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
 
+  const dispatch = useDispatch<AppDispatch>();
+  const isLoading = useSelector(selectIsLoading);
+  const authError = useSelector(selectAuthError);
+
   const {
     register,
     handleSubmit,
@@ -45,7 +52,7 @@ export const SignUpForm: React.FC = () => {
 
   const onSubmit = async (data: FormData) => {
     const { email, password } = data;
-    console.log('Email:', email, 'Password:', password);
+    await dispatch(registerUser({ email, password }));
     reset();
   };
 
@@ -58,6 +65,9 @@ export const SignUpForm: React.FC = () => {
           onSubmit={handleSubmit(onSubmit)}
         >
           <h1 className={styles.title}>Sign-Up</h1>
+
+          {authError && <p className={styles.error}>{authError}</p>}
+
           <div className={styles.inputBox}>
             <div className={styles.group}>
               <label htmlFor="email" className={styles.label}>
@@ -137,8 +147,12 @@ export const SignUpForm: React.FC = () => {
             </div>
           </div>
 
-          <button type="submit" className={styles.signUpBtn}>
-            Sign Up
+          <button
+            type="submit"
+            className={styles.signUpBtn}
+            disabled={isLoading}
+          >
+            {isLoading ? 'Signing Up...' : 'Sign Up'}
           </button>
 
           <div className={styles.signUpOffer}>

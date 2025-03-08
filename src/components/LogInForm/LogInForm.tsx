@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch } from '../../redux/store';
+import { login } from '../../redux/auth/operations';
+import { selectAuthError, selectIsLoading } from '../../redux/auth/selectors';
 import { NavLink } from 'react-router-dom';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import styles from './LogInForm.module.css';
@@ -22,6 +26,9 @@ const validationSchema = yup.object().shape({
 
 export const LogInForm: React.FC = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
+  const dispatch = useDispatch<AppDispatch>();
+  const isLoading = useSelector(selectIsLoading);
+  const authError = useSelector(selectAuthError);
 
   const {
     register,
@@ -38,8 +45,7 @@ export const LogInForm: React.FC = () => {
   }
 
   const onSubmit = async (data: FormData) => {
-    const { email, password } = data;
-    console.log('Email:', email, 'Password:', password);
+    await dispatch(login(data));
     reset();
   };
 
@@ -52,6 +58,9 @@ export const LogInForm: React.FC = () => {
           onSubmit={handleSubmit(onSubmit)}
         >
           <h1 className={styles.title}>Log-In</h1>
+
+          {authError && <p className={styles.error}>{authError}</p>}
+
           <div className={styles.inputBox}>
             <div className={styles.group}>
               <label htmlFor="email" className={styles.label}>
@@ -104,8 +113,12 @@ export const LogInForm: React.FC = () => {
             </NavLink>
           </div>
 
-          <button type="submit" className={styles.signInBtn}>
-            Log In
+          <button
+            type="submit"
+            className={styles.signInBtn}
+            disabled={isLoading}
+          >
+            {isLoading ? 'Logging In...' : 'Log In'}
           </button>
 
           <div className={styles.signUpOffer}>
