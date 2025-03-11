@@ -10,6 +10,7 @@ import { NavLink } from 'react-router-dom';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import styles from './LogInForm.module.css';
 import { SignUpButton } from '../SignUpButton/SignUpButton';
+import { useNavigate } from 'react-router-dom';
 
 const validationSchema = yup.object().shape({
   email: yup
@@ -29,6 +30,7 @@ export const LogInForm: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const isLoading = useSelector(selectIsLoading);
   const authError = useSelector(selectAuthError);
+  const navigate = useNavigate();
 
   const {
     register,
@@ -45,7 +47,12 @@ export const LogInForm: React.FC = () => {
   }
 
   const onSubmit = async (data: FormData) => {
-    await dispatch(login(data));
+    const resultAction = await dispatch(login(data));
+
+    if (login.fulfilled.match(resultAction)) {
+      navigate('/tracker');
+    }
+
     reset();
   };
 

@@ -9,6 +9,7 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import styles from './SignUpForm.module.css';
 import { LogInButtonTransparent } from '../LogInButtonTransparent/LogInButtonTransparent';
 import { selectAuthError, selectIsLoading } from '../../redux/auth/selectors';
+import { useNavigate } from 'react-router-dom';
 
 const validationSchema = yup.object().shape({
   email: yup
@@ -34,6 +35,7 @@ export const SignUpForm: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const isLoading = useSelector(selectIsLoading);
   const authError = useSelector(selectAuthError);
+  const navigate = useNavigate();
 
   const {
     register,
@@ -52,7 +54,12 @@ export const SignUpForm: React.FC = () => {
 
   const onSubmit = async (data: FormData) => {
     const { email, password } = data;
-    await dispatch(registerUser({ email, password }));
+    const result = await dispatch(registerUser({ email, password }));
+
+    if (result.type === 'auth/register/fulfilled') {
+      navigate('/tracker');
+    }
+
     reset();
   };
 

@@ -3,9 +3,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-
 axios.defaults.baseURL = 'https://rd71-backend.onrender.com/api/auth';
-
 
 interface AuthResponse {
   user: { id: string; email: string };
@@ -47,7 +45,11 @@ export const login = createAsyncThunk<
     const { data } = await axios.post('/login', credentials, {
       withCredentials: true,
     });
-    return data;
+
+    return {
+      user: data.data.user,
+      accessToken: data.data.accessToken,
+    };
   } catch (error: unknown) {
     if (axios.isAxiosError(error)) {
       return thunkAPI.rejectWithValue({
